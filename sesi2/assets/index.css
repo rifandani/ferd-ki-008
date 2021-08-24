@@ -1,0 +1,175 @@
+html {
+  background-color: rgb(240, 240, 240);
+}
+
+hr {
+  background-color: #333;
+  border: 0 none;
+  height: 100px;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: rgb(0, 102, 255);
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+/* ------------------------------------------- nav ------------------------------------------- */
+
+.navbar {
+  background-color: white;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  padding: 0 10vw;
+  /* position: sticky;
+  top: 0; */
+  box-shadow: 0 5px 5px rgb(199, 199, 199);
+}
+
+.navbar__list {
+  display: flex;
+  justify-content: end;
+  width: 40vw;
+}
+
+.navbar__list-item {
+  margin: 0 1em;
+}
+
+/* -------------------------------------------- main -------------------------------------------- */
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* portfolio */
+.main-page__portfolio {
+  background-color: white;
+  margin: 3em 10vw;
+  height: 15em;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-page__portfolio__kiri {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.foto {
+  border-radius: 99px;
+  width: 10em;
+  height: 10em;
+  margin-right: 2em;
+}
+
+.nama {
+  font-size: 1.75em;
+}
+
+.role {
+  color: gray;
+  font-size: 0.9em;
+  margin-bottom: 2em;
+}
+
+.kontak {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border-color: blue;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.kontak:hover {
+  cursor: pointer;
+  background-color: rgb(0, 102, 255);
+  border-color: rgb(0, 102, 255);
+}
+
+.resume {
+  padding: 10px 20px;
+  color: green;
+  border-color: green;
+  border-radius: 5px;
+}
+.resume:hover {
+  cursor: pointer;
+  background-color: rgb(0, 255, 85);
+  border-color: rgb(0, 255, 85);
+  color: white;
+}
+
+.main-page__portfolio__kanan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2em 2em;
+  width: 100%;
+  /* border: solid white;
+  border-left-color: crimson;
+  border-left-width: thick; */
+}
+
+.main-page__portfolio__kanan__span {
+  display: flex;
+}
+
+.main-page__portfolio__kanan__span__text {
+  width: 8em;
+  font-weight: bold;
+}
+
+.main-page__portfolio__kanan__span__jawaban {
+  color: gray;
+  font-size: 0.9em;
+}
+
+/* form */
+.main-page__form {
+  background-color: white;
+  margin: 0 10vw 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page__form__input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 7px 20px;
+  background-color: green;
+  color: white;
+  border-color: green;
+  border-radius: 5px;
+}
+.btn-submit:hover {
+  cursor: pointer;
+  background-color: rgb(0, 255, 85);
+  border-color: rgb(0, 255, 85);
+  color: white;
+}
