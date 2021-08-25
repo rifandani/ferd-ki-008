@@ -1,5 +1,9 @@
+:root {
+  --abu-abu: rgb(240, 240, 240);
+}
+
 html {
-  background-color: rgb(240, 240, 240);
+  background-color: var(--abu-abu);
 }
 
 hr {
@@ -67,6 +71,7 @@ label {
   height: 15em;
   display: flex;
   flex-direction: row;
+  box-shadow: 5px 5px 5px rgb(199, 199, 199);
 }
 
 .main-page__portfolio__kiri {
@@ -124,11 +129,11 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2em 2em;
+  margin: 2em 2em;
   width: 100%;
-  /* border: solid white;
-  border-left-color: crimson;
-  border-left-width: thick; */
+  padding-left: 1em;
+  border: solid white;
+  border-left-color: var(--abu-abu);
 }
 
 .main-page__portfolio__kanan__span {
