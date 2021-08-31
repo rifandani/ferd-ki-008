@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tugas Sesi 4</title>
+    <!-- css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/index.css" />
+  </head>
+
+  <body id="app" class="bg-opacity-25 bg-secondary">
+    <!-- header-page -->
+    <header class="container py-2 header-page">
+      <h1 class="text-center fw-bold">Workshop Blog</h1>
+      <p class="text-center text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        volutpat, dolor a dictum dignissim, ipsum dui rhoncus orci, vitae
+        sodales libero nibh molestie lorem.
+      </p>
+    </header>
+
+    <!-- main-page -->
+    <main class="container my-2 main-page d-block d-sm-flex">
+      <!-- aside-right -->
+      <section class="my-2 my-sm-0 d-block d-sm-none">
+        <div class="mb-2 card">
+          <div class="card-body">
+            <h4 class="mb-4 card-title text-primary">First Workshop</h4>
+
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+
+            <a href="#" class="card-link">Detail</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h4 class="mb-4 card-title text-primary">Second Workshop</h4>
+
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+
+            <a href="#" class="card-link">Detail</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- aside-left -->
+      <section class="me-0 me-sm-2">
+        <!-- navbar -->
+        <nav
+          class="mb-2 rounded navbar navbar-expand-lg navbar-dark bg-primary"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Articles</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#github">Github</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#vcs">VCS</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- content-page -->
+        <div class="content-page">
+          <div class="mb-2 card" id="github">
+            <div class="card-header text-end fst-italic">
+              Event: <strong>20 September 2021</strong>
+            </div>
+
+            <img
+              src="assets/octocat.png"
+              class="img-fluid"
+              alt="Workshop Github"
+            />
+
+            <div class="card-body">
+              <h4 class="mb-4 card-title font-monospace">Workshop Github</h4>
+
+              <p class="card-text">
+                At a high level, GitHub is a website and cloud-based service
+                that helps developers store and manage their code, as well as
+                track and control changes to their code. To understand exactly
+                what GitHub is, you need to know two connected principles, which
+                is Version Control and Git. According to Wikipedia, GitHub, Inc.
+                is a provider of Internet hosting for software development and
+                version control using Git. It offers the distributed version
+                control and source code management (SCM) functionality of Git,
+                plus its own features. It provides access control and several
+                collaboration features such as bug tracking, feature requests,
+                task management, continuous integration and wikis for every
+                project. Headquartered in California, it has been a subsidiary
+                of Microsoft since 2018. It is commonly used to host open-source
+                projects. As of January 2020, GitHub reports having over 40
+                million users and more than 190 million repositories (including
+                at least 28 million public repositories). It is the largest
+                source code host as of April 2020.
+              </p>
+
+              <a href="#" class="card-link">Selengkapnya 👉</a>
+            </div>
+          </div>
+
+          <div class="card" id="vcs">
+            <div class="card-header text-end fst-italic">
+              Event: <strong>20 October 2021</strong>
+            </div>
+
+            <img
+              src="assets/diagram-vcs.png"
+              class="img-fluid"
+              alt="Workshop Version Control System"
+            />
+
+            <div class="card-body">
+              <h4 class="mb-4 card-title font-monospace">
+                Workshop Version Control System
+              </h4>
+
+              <p class="card-text justif">
+                Version control, also known as source control, is the practice
+                of tracking and managing changes to software code. Version
+                control systems are software tools that help software teams
+                manage changes to source code over time. As development
+                environments have accelerated, version control systems help
+                software teams work faster and smarter. They are especially
+                useful for DevOps teams since they help them to reduce
+                development time and increase successful deployments.
+              </p>
+
+              <a href="#" class="card-link">Selengkapnya 👉</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- aside-right -->
+      <section class="my-2 d-none d-sm-block my-sm-0">
+        <div class="mb-2 card" style="min-width: 15em">
+          <div class="card-body">
+            <h4 class="mb-4 card-title text-primary">First Workshop</h4>
+
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+
+            <a href="#" class="card-link">Detail</a>
+          </div>
+        </div>
+
+        <div class="card" style="min-width: 15em">
+          <div class="card-body">
+            <h4 class="mb-4 card-title text-primary">Second Workshop</h4>
+
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+
+            <a href="#" class="card-link">Detail</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

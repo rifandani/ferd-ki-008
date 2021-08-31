@@ -14,155 +14,188 @@
     <link rel="stylesheet" href="assets/index.css" />
   </head>
 
-  <body id="app" class="bg-opacity-25 bg-secondary">
-    <!-- header-page -->
-    <header class="container py-2 header-page">
-      <h1 class="text-center fw-bold">Workshop Blog</h1>
-      <p class="text-center text-muted">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-        volutpat, dolor a dictum dignissim, ipsum dui rhoncus orci, vitae
-        sodales libero nibh molestie lorem.
-      </p>
-    </header>
+  <body id="app">
+    <!-- navbar -->
+    <nav class="shadow navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Assignment 3</a>
 
-    <!-- main-page -->
-    <main class="container my-2 main-page d-block d-sm-flex">
-      <!-- aside-left -->
-      <section class="me-2">
-        <!-- navbar -->
-        <nav
-          class="mb-2 navbar navbar-expand-lg navbar-dark bg-primary rounded"
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Articles</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >Home</a
-                  >
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Portofolio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Tutorial
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="#">First</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Second</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Mechanics</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Mechatronics</a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link disabled"
-                    href="#"
-                    tabindex="-1"
-                    aria-disabled="true"
-                    >Electronics</a
-                  >
+                <li>
+                  <a class="dropdown-item" href="#">Third</a>
                 </li>
               </ul>
-            </div>
-          </div>
-        </nav>
-
-        <!-- content-page -->
-        <div class="content-page">
-          <div class="mb-2 card">
-            <div class="card-header text-end fst-italic">
-              Event: <strong>20 September 2021</strong>
-            </div>
-
-            <img
-              src="assets/simple-claw.png"
-              class="card-img-top"
-              alt="Workshop Mechanical Engineering"
-            />
-
-            <div class="card-body">
-              <h4 class="mb-4 card-title font-monospace">
-                Workshop Mechanical Engineering
-              </h4>
-
-              <p class="card-text">
-                Mechanical engineering is an engineering branch that combines
-                engineering physics and mathematics principles with materials
-                science to design, analyze, manufacture, and maintain mechanical
-                systems. It is one of the oldest and broadest of the engineering
-                branches.
-              </p>
-
-              <a href="#" class="card-link">Selengkapnya 👉</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header text-end fst-italic">
-              Event: <strong>20 October 2021</strong>
-            </div>
-
-            <img
-              src="assets/diagram-vcs.png"
-              class="card-img-top"
-              alt="Workshop Mechatronics Engineering"
-            />
-
-            <div class="card-body">
-              <h4 class="mb-4 card-title font-monospace">
-                Workshop Mechatronics Engineering
-              </h4>
-
-              <p class="card-text justif">
-                mechatronics engineering, is an interdisciplinary branch of
-                engineering that focuses on the integration of mechanical,
-                electronic and electrical engineering systems, and also includes
-                a combination of robotics, electronics, computer science,
-                telecommunications, systems, control, and product engineering.
-              </p>
-
-              <a href="#" class="card-link">Selengkapnya 👉</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- aside-right -->
-      <section class="my-2 my-sm-0">
-        <div class="mb-2 card">
-          <div class="card-body">
-            <h4 class="mb-4 card-title text-primary">First Workshop</h4>
-
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-
-            <a href="#" class="card-link">Detail</a>
-          </div>
+            </li>
+            <li class="my-3 d-lg-none nav-item">
+              <button class="btn">Login</button>
+              <button class="btn btn-primary">Daftar</button>
+            </li>
+          </ul>
         </div>
 
-        <div class="card">
-          <div class="card-body">
-            <h4 class="mb-4 card-title text-primary">Second Workshop</h4>
+        <div class="d-none d-lg-flex">
+          <button class="btn">Login</button>
+          <button class="btn btn-primary">Daftar</button>
+        </div>
+      </div>
+    </nav>
 
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+    <!-- main-page -->
+    <main class="container">
+      <!-- jumbotron -->
+      <header
+        class="py-5 my-4  card bg-secondary bg-opacity-10 d-flex align-items-center"
+      >
+        <h1 class="text-center fw-bold fs-3 font-monospace">
+          Selamat datang di website saya!
+        </h1>
+        <p class="text-muted">Explore saya lebih jauh dari sini...</p>
 
-            <a href="#" class="card-link">Detail</a>
+        <button class="mt-4 btn btn-primary">Mulai Mengenal!</button>
+      </header>
+
+      <!-- cards -->
+      <section class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="mb-4 shadow card">
+              <img
+                src="assets/simple-claw.png"
+                class="card-img-top"
+                alt="Tentang Saya"
+              />
+
+              <div class="card-body">
+                <h4 class="mb-4 card-title font-monospace">Tentang Saya</h4>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Quisque volutpat, dolor a dictum dignissim, ipsum dui rhoncus
+                  orci, vitae sodales libero nibh molestie lorem.
+                </p>
+
+                <button class="btn btn-primary">Lihat!</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="mb-4 shadow card">
+              <img
+                src="assets/simple-claw.png"
+                class="card-img-top"
+                alt="Project Saya"
+              />
+
+              <div class="card-body">
+                <h4 class="mb-4 card-title font-monospace">Project Saya</h4>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Quisque volutpat, dolor a dictum dignissim, ipsum dui rhoncus
+                  orci, vitae sodales libero nibh molestie lorem.
+                </p>
+
+                <button class="btn btn-primary">Lihat!</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="mb-4 shadow card">
+              <img
+                src="assets/simple-claw.png"
+                class="card-img-top"
+                alt="Hobi Saya"
+              />
+
+              <div class="card-body">
+                <h4 class="mb-4 card-title font-monospace">Hobi Saya</h4>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Quisque volutpat, dolor a dictum dignissim, ipsum dui rhoncus
+                  orci, vitae sodales libero nibh molestie lorem.
+                </p>
+
+                <button class="btn btn-primary">Lihat!</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="mb-4 shadow card">
+              <img
+                src="assets/simple-claw.png"
+                class="card-img-top"
+                alt="Fakta Saya"
+              />
+
+              <div class="card-body">
+                <h4 class="mb-4 card-title font-monospace">Fakta Saya</h4>
+
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Quisque volutpat, dolor a dictum dignissim, ipsum dui rhoncus
+                  orci, vitae sodales libero nibh molestie lorem.
+                </p>
+
+                <button class="btn btn-primary">Lihat!</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="mt-4 bg-secondary bg-opacity-10">
+      <div
+        class="container p-2  d-block d-md-flex justify-content-between align-items-center"
+      >
+        <p class="mb-0 text-muted">
+          Copyright © 2021. Assignment Bootstrap. All rights reserved.
+        </p>
+        <p class="mb-0 text-muted">Develop by Tri Rizeki Rifandani</p>
+      </div>
+    </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
