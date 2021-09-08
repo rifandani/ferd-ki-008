@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Tugas Sesi 8</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/modern-normalize.css" />
+  </head>
+
+  <body id="app">
+    <nav class="navbar">
+      <hr />
+
+      <ul class="navbar__list">
+        <li class="navbar__list-item">
+          <a href="#" class="navbar__link">HOME</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#" class="navbar__link">PRODUCT</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#" class="navbar__link">GALLERY</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#" class="navbar__link">BLOG</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#" class="navbar__link">INVENTORY</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main-page">
+      <section class="main-page__portfolio">
+        <div class="main-page__portfolio__kiri">
+          <div class="main-page__portfolio__foto">
+            <img class="foto" src="assets/images/pantai.jpg" alt="Foto Diri" />
+          </div>
+
+          <div class="main-page__portfolio__nama">
+            <h1 id="namaOutput" class="nama">Loading...</h1>
+            <p id="roleOutput" class="role">Loading...</p>
+            <button id="kontakOutput" class="kontak" onclick="onClickEdit()">
+              Edit
+            </button>
+            <button class="resume">Resume</button>
+          </div>
+        </div>
+
+        <div class="main-page__portfolio__kanan">
+          <span class="main-page__portfolio__kanan__span">
+            <p class="main-page__portfolio__kanan__span__text">Availability</p>
+            <p
+              id="availabilityOutput"
+              class="main-page__portfolio__kanan__span__jawaban"
+            >
+              Loading...
+            </p>
+          </span>
+
+          <span class="main-page__portfolio__kanan__span">
+            <p class="main-page__portfolio__kanan__span__text">Usia</p>
+            <p
+              id="usiaOutput"
+              class="main-page__portfolio__kanan__span__jawaban"
+            >
+              Loading...
+            </p>
+          </span>
+
+          <span class="main-page__portfolio__kanan__span">
+            <p class="main-page__portfolio__kanan__span__text">Lokasi</p>
+            <p
+              id="lokasiOutput"
+              class="main-page__portfolio__kanan__span__jawaban"
+            >
+              Loading...
+            </p>
+          </span>
+
+          <span class="main-page__portfolio__kanan__span">
+            <p class="main-page__portfolio__kanan__span__text">Pengalaman</p>
+            <p
+              id="pengalamanOutput"
+              class="main-page__portfolio__kanan__span__jawaban"
+            >
+              Loading...
+            </p>
+          </span>
+
+          <span class="main-page__portfolio__kanan__span">
+            <p class="main-page__portfolio__kanan__span__text">Email</p>
+            <p
+              id="emailOutput"
+              class="main-page__portfolio__kanan__span__jawaban"
+            >
+              Loading...
+            </p>
+          </span>
+        </div>
+      </section>
+
+      <!-- START FORM -->
+      <form
+        id="myform"
+        class="main-page__form"
+        onsubmit="checkFormValidity(); return false"
+      >
+        <!-- nama -->
+        <div class="main-page__form__input">
+          <label for="nama"> Nama </label>
+          <input id="nama" type="text" />
+        </div>
+
+        <!-- role -->
+        <div class="main-page__form__input">
+          <label for="role"> Role </label>
+          <input id="role" type="text" />
+        </div>
+
+        <!-- availability -->
+        <div class="main-page__form__input">
+          <label for="availability"> Availability </label>
+          <input id="availability" type="text" />
+        </div>
+
+        <!-- usia -->
+        <div class="main-page__form__input">
+          <label for="usia"> Usia </label>
+          <input id="usia" type="number" min="1" max="200" />
+        </div>
+
+        <!-- lokasi -->
+        <div class="main-page__form__input">
+          <label for="lokasi"> Lokasi </label>
+          <input id="lokasi" type="text" />
+        </div>
+
+        <!-- pengalaman -->
+        <div class="main-page__form__input">
+          <label for="pengalaman"> Years Experience </label>
+          <input id="pengalaman" type="number" min="0" max="199" />
+        </div>
+
+        <!-- email -->
+        <div class="main-page__form__input">
+          <label for="email"> Email </label>
+          <input id="email" type="email" />
+        </div>
+
+        <!-- submit -->
+        <button id="submitBtn" class="btn-submit" type="submit" hidden>
+          Submit
+        </button>
+      </form>
+    </main>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="assets/js/index.js" defer></script>
+  </body>
+</html>
