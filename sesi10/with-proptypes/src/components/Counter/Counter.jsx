@@ -7,6 +7,7 @@ class Counter extends Component {
     super();
     this.state = {
       count: 0,
+      crementValue: 1,
     };
 
     this.increment = this.increment.bind(this);
@@ -16,17 +17,18 @@ class Counter extends Component {
   componentDidMount() {
     this.setState({
       count: this.props.count || 0,
+      crementValue: this.props.crementValue || 1,
     });
   }
 
   increment = () => {
     this.setState((state) => ({
-      count: state.count + 1,
+      count: state.count + state.crementValue,
     }));
   };
   decrement = () => {
     this.setState((state) => ({
-      count: state.count - 1,
+      count: state.count - state.crementValue,
     }));
   };
 
@@ -46,6 +48,7 @@ class Counter extends Component {
 
 Counter.propTypes = {
   count: PropTypes.number,
+  crementValue: PropTypes.number,
 };
 
 export default Counter;

@@ -1,0 +1,8 @@
+.footer {
+  padding: 0.1rem 0;
+}
+
+.footer__text {
+  text-align: center;
+  font-style: italic;
+}

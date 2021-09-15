@@ -1,7 +1,12 @@
+import { Component } from "react";
 import "./DefaultContainer.css";
 
-const DefaultContainer = ({ children }) => {
-  return <div className="default-container">{children}</div>;
-};
+class DefaultContainer extends Component {
+  render() {
+    const { children } = this.props;
+
+    return <div className="default-container">{children}</div>;
+  }
+}
 
 export default DefaultContainer;

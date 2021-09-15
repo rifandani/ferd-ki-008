@@ -1,0 +1,16 @@
+.counter {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.counter__value {
+  margin: 0 0 1rem 0;
+}
+
+.counter__inputs {
+  display: flex;
+  gap: 10px;
+}

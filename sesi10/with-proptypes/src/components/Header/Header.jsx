@@ -1,11 +1,21 @@
+import { Component } from "react";
+import PropTypes from "prop-types";
 import "./Header.css";
 
-const Header = () => {
-  return (
-    <header className="header">
-      <p className="header__title">My First ⚛ App</p>
-    </header>
-  );
+class Header extends Component {
+  render() {
+    const { title } = this.props;
+
+    return (
+      <header className="header">
+        <p className="header__title">{title || "My App"}</p>
+      </header>
+    );
+  }
+}
+
+Header.propTypes = {
+  title: PropTypes.string,
 };
 
 export default Header;

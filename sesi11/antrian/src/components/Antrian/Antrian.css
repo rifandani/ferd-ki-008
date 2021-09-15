@@ -1,0 +1,53 @@
+.antrian {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.antrian__input {
+  padding: 10px;
+  border-style: dashed;
+  border-radius: 10px;
+  border-color: darkcyan;
+  outline: none;
+}
+
+.antrian__buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.antrian__buttonContainer__button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: black;
+  background-color: cyan;
+}
+
+button:hover {
+  color: whitesmoke;
+  background-color: darkcyan;
+  cursor: pointer;
+}
+
+button:disabled {
+  color: black;
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.antrian__list {
+  width: 100%;
+  padding: 1rem;
+  /* background-color: cornflowerblue; */
+  display: grid;
+  grid-template-columns: repeat(5, 7rem);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
