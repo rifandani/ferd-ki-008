@@ -1,0 +1,6 @@
+.default-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  /* margin-left: 10rem; */
+}
