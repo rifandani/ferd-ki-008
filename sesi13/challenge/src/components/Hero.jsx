@@ -5,10 +5,20 @@ import {
   Image,
   Stack,
   Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
   useBreakpointValue,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 export default function Hero() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Stack
       backgroundColor={"gray.700"}
@@ -56,9 +66,50 @@ export default function Hero() {
               _hover={{
                 bg: "green.500",
               }}
+              isLoading={isOpen}
+              onClick={onOpen}
             >
               Start Free
             </Button>
+
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader color={"green.400"}>Thank You</ModalHeader>
+                <ModalCloseButton />
+
+                <ModalBody>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aliquam pulvinar eget tellus ut sollicitudin. In pretium diam
+                  vel arcu pretium facilisis. Nullam congue sem non erat
+                  vehicula, fermentum tincidunt justo volutpat. Nam ac lectus
+                  velit. Praesent ac dolor eget lorem molestie hendrerit et nec
+                  nulla. Vivamus aliquet eu lacus quis dictum. Mauris a aliquam
+                  nisi, quis scelerisque dolor. Donec eu erat in lectus commodo
+                  aliquam vitae quis metus. Vestibulum pulvinar quam et
+                  hendrerit dictum. Aliquam risus ligula, mollis vel magna non,
+                  molestie faucibus turpis. Maecenas lobortis arcu leo. Aliquam
+                  accumsan sem in odio hendrerit sodales. Duis euismod id dui
+                  cursus finibus. Etiam cursus semper sodales.
+                </ModalBody>
+
+                <ModalFooter>
+                  <Button variant="ghost" mr={3} onClick={onClose}>
+                    Close
+                  </Button>
+                  <Button
+                    bg={"green.400"}
+                    color={"white"}
+                    _hover={{
+                      bg: "green.500",
+                    }}
+                    onClick={onClose}
+                  >
+                    Cool
+                  </Button>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
           </Stack>
         </Stack>
       </Flex>
