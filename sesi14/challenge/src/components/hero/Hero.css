@@ -1,0 +1,21 @@
+.hero {
+  margin: 1rem 2rem;
+  padding: 2rem;
+  background-color: azure;
+  border-radius: 1rem;
+}
+
+.hero__title {
+  font-size: larger;
+}
+
+.hero__subtitle {
+  color: gray;
+}
+
+.hero__button {
+  background-color: lightseagreen;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}

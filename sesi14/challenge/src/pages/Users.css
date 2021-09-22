@@ -1,0 +1,11 @@
+.users {
+  margin: 1rem 2rem;
+}
+
+.users__button {
+  margin-bottom: 1rem;
+  background-color: lightslategray;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
