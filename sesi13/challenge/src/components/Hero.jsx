@@ -23,11 +23,19 @@ export default function Hero() {
     <Stack
       backgroundColor={"gray.700"}
       minH={"100vh"}
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: "column-reverse", md: "row" }}
     >
-      <Flex p={8} flex={1} align={"center"} justify={"center"}>
+      <Flex
+        p={8}
+        flex={1}
+        align={{ base: "start", md: "center" }}
+        justify={{ base: "start", md: "center" }}
+      >
         <Stack spacing={6} w={"full"} maxW={"lg"}>
-          <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+          <Heading
+            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+            textAlign={{ base: "center", md: "left" }}
+          >
             <Text
               as={"span"}
               color={"white"}
@@ -47,12 +55,20 @@ export default function Hero() {
               MongoDB
             </Text>
             <br />{" "}
-            <Text color={"white"} as={"span"}>
+            <Text
+              color={"white"}
+              as={"span"}
+              textAlign={{ base: "center", md: "left" }}
+            >
               Application Data Platform
             </Text>{" "}
           </Heading>
 
-          <Text fontSize={{ base: "md", lg: "lg" }} color={"white"}>
+          <Text
+            fontSize={{ base: "md", lg: "lg" }}
+            color={"white"}
+            textAlign={{ base: "center", md: "left" }}
+          >
             Accelerate development, address diverse data sets, and adapt quickly
             to change with a proven application data platform built around the
             database most wanted by developers 4 years running.
@@ -60,7 +76,7 @@ export default function Hero() {
 
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Button
-              width={40}
+              width={{ base: "100%", md: 40 }}
               bg={"green.400"}
               color={"white"}
               _hover={{
@@ -114,10 +130,13 @@ export default function Hero() {
         </Stack>
       </Flex>
 
-      <Flex flex={1}>
+      <Flex flex={1} justify={"center"} align={"center"}>
         <Image
           alt={"Login Image"}
           objectFit={"contain"}
+          height={{ base: "50%", md: "85%" }}
+          width={{ base: "50%", md: "85%" }}
+          marginTop={{ base: "0", md: "10" }}
           src={
             "https://webimages.mongodb.com/_com_assets/cms/kmya588xyp75dl3oc-Homepage%20Hero.svg?auto=format%2Ccompress&ch=DPR"
           }
