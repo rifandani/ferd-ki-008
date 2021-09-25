@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import "./Antrian.css";
 import AntrianItem from "./AntrianItem/AntrianItem";
 
@@ -7,13 +7,13 @@ const Antrian = () => {
   const [antrian, setAntrian] = useState([]);
 
   const antrikan = () => {
-    setAntrian((prev) => [...prev, text]); // add antrian
+    setAntrian((prev) => [text, ...prev]); // add antrian
     setText(""); // clear input field
   };
   const majukan = () => {
     setAntrian((prev) => {
       const cloneAntrian = [...prev];
-      cloneAntrian.shift();
+      cloneAntrian.pop();
 
       return cloneAntrian;
     }); // remove first antrian
@@ -36,7 +36,7 @@ const Antrian = () => {
           }
         }}
         onKeyPress={(e) => {
-          if (antrian.length > 1 && e.shiftKey && e.key === "Enter") {
+          if (antrian.length >= 1 && e.shiftKey && e.key === "Enter") {
             majukan();
           }
         }}
@@ -63,12 +63,16 @@ const Antrian = () => {
 
       {/* antrian list */}
       <div className="antrian__list">
-        {antrian.map((text, i) => (
-          <>
-            {i > 0 && <span> ➡ </span>}
-            <AntrianItem key={i} text={text} />
-          </>
-        ))}
+        {antrian.length === 0 ? (
+          <AntrianItem text="Antrian Kosong" />
+        ) : (
+          antrian.map((text, i) => (
+            <Fragment key={i}>
+              {i > 0 && <span> ⬅ </span>}
+              <AntrianItem text={text} />
+            </Fragment>
+          ))
+        )}
       </div>
     </section>
   );

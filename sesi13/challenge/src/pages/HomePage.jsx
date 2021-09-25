@@ -3,6 +3,9 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Feature from "../components/Feature";
 import Sponsor from "../components/Sponsor";
+import Resources from "../components/Resources";
+import Models from "../components/Models";
+import CTA from "../components/CTA";
 
 const Features = [
   {
@@ -39,6 +42,12 @@ const HomePage = () => {
       ))}
 
       <Sponsor />
+
+      <Resources />
+
+      <Models />
+
+      <CTA />
 
       <Footer />
     </>
