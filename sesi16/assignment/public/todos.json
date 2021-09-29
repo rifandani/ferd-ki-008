@@ -1,0 +1,22 @@
+[
+  {
+    "id": "268b4446-d6d8-478f-a87b-ea01877c3f69",
+    "text": "Dummy text 1",
+    "status": "BACKLOG"
+  },
+  {
+    "id": "8124138b-cca9-41f0-b663-1d400d3e1bf5",
+    "text": "Dummy text 22",
+    "status": "IN_PROGRESS"
+  },
+  {
+    "id": "db1c0f85-0c1c-4da2-a392-bc5eb859f60a",
+    "text": "Dummy text 333",
+    "status": "EVALUATION"
+  },
+  {
+    "id": "5aeecb61-ce91-4e41-9f9a-283c611522ac",
+    "text": "Dummy text 4444",
+    "status": "DONE"
+  }
+]
