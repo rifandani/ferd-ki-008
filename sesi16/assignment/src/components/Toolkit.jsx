@@ -24,10 +24,10 @@ const Toolkit = () => {
   const { values } = useSelector((state) => state.todos);
   const dispatch = useDispatch();
 
-  const backlogs = values.filter((todo) => todo.status === "BACKLOG");
-  const inprogresss = values.filter((todo) => todo.status === "IN_PROGRESS");
-  const evaluations = values.filter((todo) => todo.status === "EVALUATION");
-  const dones = values.filter((todo) => todo.status === "DONE");
+  const backlogs = values?.filter((todo) => todo.status === "BACKLOG");
+  const inprogresss = values?.filter((todo) => todo.status === "IN_PROGRESS");
+  const evaluations = values?.filter((todo) => todo.status === "EVALUATION");
+  const dones = values?.filter((todo) => todo.status === "DONE");
 
   const onSaveToBacklog = () => {
     const payload = text;

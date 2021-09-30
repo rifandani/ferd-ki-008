@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 
-import todosReducer from "./todosReducer";
+import todosLegacyReducer from "./todosLegacyReducer";
 
 // combining all reducers
 const rootReducer = combineReducers({
-  todos: todosReducer,
+  todosLegacy: todosLegacyReducer,
 });
 
 export default rootReducer;

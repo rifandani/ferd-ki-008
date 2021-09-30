@@ -12,7 +12,7 @@ export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
       Accept: "application/json",
     },
   });
-  const data = response.json();
+  const data = await response.json();
   return data;
 });
 

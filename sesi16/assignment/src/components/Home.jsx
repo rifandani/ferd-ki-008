@@ -14,49 +14,47 @@ import { useDispatch, useSelector } from "react-redux";
 const Home = () => {
   const [text, setText] = useState("");
 
-  const { values } = useSelector((state) => state.todos);
+  const { todosLegacy } = useSelector((state) => state.todosLegacy);
   const dispatch = useDispatch();
 
-  const backlogs = values.filter((todo) => todo.status === "BACKLOG");
-  const inprogresss = values.filter((todo) => todo.status === "IN_PROGRESS");
-  const evaluations = values.filter((todo) => todo.status === "EVALUATION");
-  const dones = values.filter((todo) => todo.status === "DONE");
+  const backlogs = todosLegacy?.filter((todo) => todo.status === "BACKLOG");
+  const inprogresss = todosLegacy?.filter(
+    (todo) => todo.status === "IN_PROGRESS"
+  );
+  const evaluations = todosLegacy?.filter(
+    (todo) => todo.status === "EVALUATION"
+  );
+  const dones = todosLegacy?.filter((todo) => todo.status === "DONE");
 
   const onSaveToBacklog = () => {
-    const action = {
-      type: "SAVE_TO_BACKLOG",
-      payload: text,
-    };
+    const payload = text;
 
     // dispatch actions
-    dispatch();
+    dispatch({
+      type: "ADD_BACKLOG_LEGACY",
+      payload,
+    });
   };
   const onTake = (todoId) => {
-    const action = {
-      type: "TAKE",
-      payload: todoId,
-    };
-
     // dispatch actions
-    dispatch();
+    dispatch({
+      type: "TAKE_LEGACY",
+      payload: todoId,
+    });
   };
   const onEvaluate = (todoId) => {
-    const action = {
-      type: "EVALUATE",
-      payload: todoId,
-    };
-
     // dispatch actions
-    dispatch();
+    dispatch({
+      type: "EVALUATE_LEGACY",
+      payload: todoId,
+    });
   };
   const onDone = (todoId) => {
-    const action = {
-      type: "DONE",
-      payload: todoId,
-    };
-
     // dispatch actions
-    dispatch();
+    dispatch({
+      type: "DONE_LEGACY",
+      payload: todoId,
+    });
   };
 
   return (

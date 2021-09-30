@@ -5,11 +5,9 @@ import Footer from "../components/Footer";
 import { Spinner, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-// import { useGetTodosQuery } from "../redux/toolkit/slices/todosApi";
 import { fetchTodos } from "../redux/toolkit/slices/todos";
 
 const ToolkitPage = () => {
-  // const { data } = useGetTodosQuery("");
   const dispatch = useDispatch();
   const [isReady, setIsReady] = useState(false);
 

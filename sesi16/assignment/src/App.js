@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import ToolkitPage from "./pages/ToolkitPage";
-import legacyStore from "./redux/toolkit/store";
-import toolkitStore from "./redux/legacy/store";
+import toolkitStore from "./redux/toolkit/store";
+import legacyStore from "./redux/legacy/store";
 
 const colors = {
   rifandani: {
@@ -20,18 +20,20 @@ const theme = extendTheme({ colors });
 const App = () => {
   return (
     <Router>
-      <Provider store={toolkitStore}>
-        <ChakraProvider theme={theme}>
-          <Switch>
-            <Route path="/toolkit">
+      <ChakraProvider theme={theme}>
+        <Switch>
+          <Route path="/toolkit">
+            <Provider store={toolkitStore}>
               <ToolkitPage />
-            </Route>
-            <Route exact path="/">
+            </Provider>
+          </Route>
+          <Route exact path="/">
+            <Provider store={legacyStore}>
               <HomePage />
-            </Route>
-          </Switch>
-        </ChakraProvider>
-      </Provider>
+            </Provider>
+          </Route>
+        </Switch>
+      </ChakraProvider>
     </Router>
   );
 };
