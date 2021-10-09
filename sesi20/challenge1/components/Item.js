@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Box, Image, Text, Flex, Spacer } from 'native-base';
+import * as React from "react";
+import { Image, Text, Flex, Spacer } from "native-base";
 
 export default function Item({ name, location, email, picture }) {
   const fullName = `${name.title}. ${name.first} ${name.last}`;
@@ -8,12 +8,12 @@ export default function Item({ name, location, email, picture }) {
     <Flex
       flex={1}
       p={5}
-      m={5}
       direction="row"
       rounded="lg"
+      borderBottomWidth="1"
       borderColor="coolGray.200"
-      borderWidth="1"
-      bg="blue.50">
+      bg="blue.50"
+    >
       <Image
         size={60}
         resizeMode="contain"
@@ -28,7 +28,9 @@ export default function Item({ name, location, email, picture }) {
         <Text italic isTruncated>
           {`${location.street.number}. ${location.street.name} ${location.city}`}
         </Text>
-        <Text isTruncated color="red.500">{email}</Text>
+        <Text isTruncated color="red.500">
+          {email}
+        </Text>
       </Flex>
     </Flex>
   );

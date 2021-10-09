@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+// import { FlatList } from "react-native";
 import {
   Text,
   FlatList,
@@ -8,19 +9,16 @@ import {
   Input,
   WarningOutlineIcon,
   IconButton,
-} from 'native-base';
+} from "native-base";
 
 // You can import from local files
-import Wish from '../components/Wish';
+import Wish from "../components/Wish";
 
 export default function WishlistScreen() {
-  const [input, setInput] = React.useState('');
+  const [input, setInput] = React.useState("");
   const [wishes, setWishes] = React.useState([]);
   const [isInvalid, setIsInvalid] = React.useState(false);
-  const [errorMessage, setErrorMessage] = React.useState('');
-
-  // checkbox
-  const [groupValues, setGroupValues] = React.useState([])
+  const [errorMessage, setErrorMessage] = React.useState("");
 
   const onAddWish = () => {
     if (!input) {
@@ -34,7 +32,7 @@ export default function WishlistScreen() {
     }
 
     setIsInvalid(false);
-    setErrorMessage('');
+    setErrorMessage("");
     setWishes((prev) => [
       ...prev,
       {
@@ -50,13 +48,15 @@ export default function WishlistScreen() {
   };
 
   const onToggleCheckbox = (wishId) => {
-    setWishes((prev) => prev.map((wish) => {
-      if(wish.id === wishId) {
-        wish.isCompleted = !wish.isCompleted
-      }
+    setWishes((prev) =>
+      prev.map((wish) => {
+        if (wish.id === wishId) {
+          wish.isCompleted = !wish.isCompleted;
+        }
 
-      return wish
-    }));
+        return wish;
+      })
+    );
   };
 
   return (
@@ -65,7 +65,7 @@ export default function WishlistScreen() {
         Wishlist
       </Text>
 
-      <Flex direction="row" p={5} flex={1} height={100}>
+      <Flex direction="row" p={5} height={100}>
         <FormControl isInvalid={isInvalid}>
           <Input
             w="100%"
@@ -76,12 +76,12 @@ export default function WishlistScreen() {
             onChangeText={(text) => setInput(text)}
             InputRightElement={
               <IconButton
-                icon={<AddIcon size="xs" my={2} mx={2} />}
-                colorScheme="blue"
+                icon={<AddIcon size="xs" my={2} mx={2} color="blue.500" />}
                 onPress={onAddWish}
               />
             }
           />
+
           <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
             {errorMessage}
           </FormControl.ErrorMessage>
@@ -90,6 +90,7 @@ export default function WishlistScreen() {
 
       <FlatList
         data={wishes}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Wish
             id={item.id}
@@ -99,8 +100,18 @@ export default function WishlistScreen() {
             onToggleCheckbox={onToggleCheckbox}
           />
         )}
-        keyExtractor={(item) => item.id}
       />
+
+      {/* {wishes.map((item) => (
+        <Wish
+          key={item.id}
+          id={item.id}
+          text={item.text}
+          isCompleted={item.isCompleted}
+          onDeleteWish={onDeleteWish}
+          onToggleCheckbox={onToggleCheckbox}
+        />
+      ))} */}
     </Flex>
   );
 }
