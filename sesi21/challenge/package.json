@@ -13,7 +13,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "server": "json-server --watch db.json --port 5000"
+    "server": "json-server db.json -H 192.168.100.21 --port 5500"
   },
   "dependencies": {
     "expo": "~42.0.0",

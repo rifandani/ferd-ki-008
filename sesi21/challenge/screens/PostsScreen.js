@@ -1,61 +1,100 @@
 import React from "react";
+import { Alert } from "react-native";
 import {
   Flex,
   Text,
   FormControl,
   Input,
-  WarningOutlineIcon,
   Button,
   AddIcon,
   FlatList,
 } from "native-base";
-
-const GET_POSTS_URL = "http://localhost:5000/posts";
+import PostItem from "../components/PostItem";
+import {
+  getPosts,
+  postPost,
+  deletePostById,
+  putPostById,
+} from "../services/posts";
 
 const PostsScreen = () => {
   const [title, setTitle] = React.useState("");
   const [desc, setDesc] = React.useState("");
   const [posts, setPosts] = React.useState([]);
-  const [isInvalid, setIsInvalid] = React.useState(false);
-  const [titleErrorMessage, setTitleErrorMessage] = React.useState("");
-  const [descErrorMessage, setDescErrorMessage] = React.useState("");
 
   React.useEffect(() => {
-    // getPosts();
+    _getPosts();
   }, []);
 
-  const getPosts = async () => {
-    try {
-      const resp = await fetch(GET_POSTS_URL);
-      const json = await resp.json();
+  const _getPosts = async () => {
+    const json = await getPosts();
 
-      setPosts(json);
-      console.log(posts);
-    } catch (err) {
-      console.error(err);
-    }
+    setPosts(json);
   };
+
+  const addPost = async () => {
+    if (!title || !desc) {
+      Alert.alert("Input Error", "Please fill in all input fields");
+      return;
+    }
+
+    const newPost = {
+      title,
+      desc,
+      id: Math.random().toString().substr(2, 15),
+    };
+
+    await postPost(newPost);
+
+    setPosts([...posts, newPost]);
+    setTitle("");
+    setDesc("");
+  };
+
+  const updatePost = React.useCallback(async (postId, updatedPost) => {
+    // TODO: PUT /posts/:id
+    await putPostById(postId, updatedPost);
+
+    setPosts((prev) =>
+      prev.map((post) => {
+        if (post.id === postId) {
+          post = updatedPost;
+        }
+
+        return post;
+      })
+    );
+
+    console.log(posts);
+  }, []);
+
+  const deletePost = React.useCallback(async (postId) => {
+    await deletePostById(postId);
+
+    setPosts((prev) => prev.filter((post) => post.id !== postId));
+  }, []);
 
   return (
     <Flex direction="column" flex={1}>
-      <Text p={5} fontSize={20} fontWeight="bold" bg="cyan.400">
+      <Text
+        p={5}
+        fontSize={20}
+        borderBottomRadius={20}
+        fontWeight="bold"
+        bg="cyan.400"
+      >
         Posts
       </Text>
 
-      <Flex direction="row" p={5} flex={1} height={100}>
-        <FormControl isInvalid={isInvalid}>
+      <Flex direction="row" p={5} height={200}>
+        <FormControl>
           <Input
             w="100%"
             bg="gray.50"
-            errorMessage="Don't empty the input title"
             placeholder="Title..."
             value={title}
             onChangeText={(text) => setTitle(text)}
           />
-
-          <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
-            {titleErrorMessage}
-          </FormControl.ErrorMessage>
 
           <Input
             isFullWidth
@@ -66,27 +105,25 @@ const PostsScreen = () => {
             onChangeText={(text) => setDesc(text)}
           />
 
-          <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
-            {descErrorMessage}
-          </FormControl.ErrorMessage>
-
-          <Button leftIcon={<AddIcon size="xs" />}>Submit</Button>
+          <Button leftIcon={<AddIcon size="xs" />} onPress={addPost}>
+            Submit
+          </Button>
         </FormControl>
       </Flex>
 
-      {/* <FlatList
-        data={wishes}
+      <FlatList
+        data={posts}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <Wish
+          <PostItem
             id={item.id}
-            text={item.text}
-            isCompleted={item.isCompleted}
-            onDeleteWish={onDeleteWish}
-            onToggleCheckbox={onToggleCheckbox}
+            title={item.title}
+            desc={item.desc}
+            deletePost={deletePost}
+            updatePost={updatePost}
           />
         )}
-        keyExtractor={(item) => item.id}
-      /> */}
+      />
     </Flex>
   );
 };
