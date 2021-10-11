@@ -1,5 +1,4 @@
 import React from "react";
-// import { FlatList } from "react-native";
 import {
   Text,
   FlatList,
@@ -7,7 +6,9 @@ import {
   AddIcon,
   FormControl,
   Input,
+  Button,
   WarningOutlineIcon,
+  MinusIcon,
   IconButton,
 } from "native-base";
 
@@ -41,6 +42,7 @@ export default function WishlistScreen() {
         isCompleted: false,
       },
     ]);
+    setInput("");
   };
 
   const onDeleteWish = (wishId) => {
@@ -57,6 +59,14 @@ export default function WishlistScreen() {
         return wish;
       })
     );
+  };
+
+  const isChecked = React.useMemo(() => {
+    return wishes.find((wish) => wish.isCompleted === true);
+  }, [wishes]);
+
+  const bulkDelete = () => {
+    setWishes((prev) => prev.filter((wish) => wish.isCompleted !== true));
   };
 
   return (
@@ -88,6 +98,18 @@ export default function WishlistScreen() {
         </FormControl>
       </Flex>
 
+      {isChecked ? (
+        <Button
+          m={5}
+          my={2}
+          colorScheme="red"
+          leftIcon={<MinusIcon size="xs" />}
+          onPress={bulkDelete}
+        >
+          Bulk Delete
+        </Button>
+      ) : null}
+
       <FlatList
         data={wishes}
         keyExtractor={(item) => item.id}
@@ -101,17 +123,6 @@ export default function WishlistScreen() {
           />
         )}
       />
-
-      {/* {wishes.map((item) => (
-        <Wish
-          key={item.id}
-          id={item.id}
-          text={item.text}
-          isCompleted={item.isCompleted}
-          onDeleteWish={onDeleteWish}
-          onToggleCheckbox={onToggleCheckbox}
-        />
-      ))} */}
     </Flex>
   );
 }
