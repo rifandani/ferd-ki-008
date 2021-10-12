@@ -52,7 +52,6 @@ const PostsScreen = () => {
   };
 
   const updatePost = React.useCallback(async (postId, updatedPost) => {
-    // TODO: PUT /posts/:id
     await putPostById(postId, updatedPost);
 
     setPosts((prev) =>
@@ -64,8 +63,6 @@ const PostsScreen = () => {
         return post;
       })
     );
-
-    console.log(posts);
   }, []);
 
   const deletePost = React.useCallback(async (postId) => {
